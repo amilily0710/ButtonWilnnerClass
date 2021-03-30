@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
         mTextView1 = findViewById((R.id.textView1));
 
         mButton1.setOnClickListener(new MyOnClickListener());
-        mButton1.setOnClickListener(new MyOnClickListener2());
+        mButton2.setOnClickListener(new MyOnClickListener());
+
 
     }
 
@@ -28,17 +29,17 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-
-          mTextView1.setText("You clicked 김윤경 Button!");
+          switch (v.getId()){
+              case R.id.button1 : mTextView1.setText("You clicked 김윤경 Button!");
+              break;
+              case R.id.button2 : mTextView1.setText("You clicked my 2nd Button!");
+              break;
+              default:
+                  break;
         }
-    }
-
-
-    private class MyOnClickListener2 implements View.OnClickListener {
-        @Override
-        public void onClick(View v) {
-            mTextView1.setText("You clicked my 2nd Button!");
-        }
-    }
+    }}
 }
+
+
+
 
